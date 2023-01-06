@@ -40,5 +40,5 @@ with st.echo(code_location='below'):
         .mark_circle(color='#ff00ff', opacity=0.5)
         .encode(x='x:Q', y='y:Q'))
     st.altair_chart(alt.Chart(pd.DataFrame(data2), height=500, width=500)
-        .mark_circle(color='#ff00ff', opacity=0.5)
+        .mark_circle(color='#00ffff', opacity=0.5)
         .encode(x='x:Q', y='y:Q'))
