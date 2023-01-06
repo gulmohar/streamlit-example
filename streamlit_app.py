@@ -22,6 +22,7 @@ with st.echo(code_location='below'):
 
     Point = namedtuple('Point', 'x y')
     data = []
+    data2 = []
 
     points_per_turn = total_points / num_turns
 
@@ -31,8 +32,13 @@ with st.echo(code_location='below'):
         radius = curr_point_num / total_points
         x = radius * math.cos(angle)
         y = radius * math.sin(angle)
-        data.append(Point(x, y))
-
+        if curr_point_num % 2 == 0
+            data.append(Point(x, y))
+        else 
+            data2.append(Point(x, y))
     st.altair_chart(alt.Chart(pd.DataFrame(data), height=500, width=500)
+        .mark_circle(color='#ff00ff', opacity=0.5)
+        .encode(x='x:Q', y='y:Q'))
+    st.altair_chart(alt.Chart(pd.DataFrame(data2), height=500, width=500)
         .mark_circle(color='#ff00ff', opacity=0.5)
         .encode(x='x:Q', y='y:Q'))
